@@ -1,10 +1,10 @@
-import UserRepository from '../dataproviders/repositories/users-repository';
 import EmailService from './email-service';
 import { User } from '../domain/models/user';
+import { UsersRepository } from '../dataproviders/repositories/users-repository';
 
 export default class UserService {
     async createUser({ name, email }: User) {
-        await UserRepository.createUser({ name, email });
+        await UsersRepository.createUser({ name, email });
 
         const emailService = new EmailService();
         await emailService.sendEmail({

@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
-import UserRepository from '../../dataproviders/repositories/users-repository';
 import UserService from '../../services/user-service';
+import { UsersRepository } from '../../dataproviders/repositories/users-repository';
 
 class UsersController {
     async getUsers(req: Request, res: Response) {
-        const result = await UserRepository.getUsers();
+        const result = await UsersRepository.getUsers();
         return res.json({ results: result });
     }
 
