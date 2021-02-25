@@ -1,7 +1,6 @@
-import UserRepository, {
-    User,
-} from '../dataproviders/repositories/users-repository';
+import UserRepository from '../dataproviders/repositories/users-repository';
 import EmailService from './email-service';
+import { User } from '../domain/models/user';
 
 export default class UserService {
     async createUser({ name, email }: User) {

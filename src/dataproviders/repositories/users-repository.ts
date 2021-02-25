@@ -1,8 +1,4 @@
-export interface User {
-    id?: number;
-    name: string;
-    email: string;
-}
+import { User } from '../../domain/models/user';
 
 const users: User[] = [{ id: 1, name: 'John', email: 'john@test.com' }];
 
