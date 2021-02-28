@@ -3,7 +3,7 @@ import request from 'supertest';
 import app from '../../../../src/configurations/app';
 
 describe('simple error test', () => {
-    it('should return error', async (done) => {
+    it('should return users', async (done) => {
         const { status, body } = await request(app).get('/api/v1/users');
 
         expect(status).toBe(200);

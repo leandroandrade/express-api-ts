@@ -3,7 +3,7 @@ import { User } from '../../domain/models/user';
 import { UsersRepository } from '../../dataproviders/repositories/users-repository';
 
 export default class UserService {
-    async createUser({ name, email }: User) {
+    async createUser({ name, email }: User): Promise<void> {
         await UsersRepository.createUser({ name, email });
 
         const emailService = new EmailService();
