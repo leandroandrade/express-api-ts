@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import UserService from '../../services/user/user-service';
 import { UsersRepository } from '../../dataproviders/repositories/users/users-repository';
+import EmailService from '../../services/externals/mail/email-service';
 
 export const UsersController = {
     async getUsers(req: Request, res: Response) {
@@ -12,7 +13,8 @@ export const UsersController = {
     async createUser(req: Request, res: Response) {
         const { name, email } = req.body;
 
-        const serivce = new UserService();
+        const mailer = new EmailService();
+        const serivce = new UserService(mailer);
         await serivce.createUser({ name, email });
 
         return res.status(201).json({
