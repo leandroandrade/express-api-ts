@@ -1,6 +1,6 @@
 import { User } from '../../domain/models/user';
 import Mail from '../externals/mail';
-import { CreateUserRepository } from '../../domain/data/users';
+import { CreateUserRepository } from '../../domain/dataproviders/users';
 
 export class CreateUserService {
     constructor(
