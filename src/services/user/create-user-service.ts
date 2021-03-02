@@ -2,7 +2,7 @@ import { User } from '../../domain/models/user';
 import Mail from '../externals/mail';
 import { CreateUserRepository } from '../../dataproviders/repositories/users/create-user-repository';
 
-export default class CreateUserService {
+export class CreateUserService {
     constructor(
         private readonly mail: Mail,
         private readonly repository: CreateUserRepository

@@ -1,7 +1,6 @@
 import faker from 'faker';
-import CreateUserService from '../../../../src/services/user/create-user-service';
-import MockEmail from './mock/mock-email';
-import MockCreateUser from './mock/mock-create-user-repository';
+import { CreateUserService } from '../../../../src/services/user';
+import { MockEmail, MockCreateUser } from './mocks';
 
 describe('user-services tests', () => {
     it('should create user', async (done) => {

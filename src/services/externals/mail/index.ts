@@ -1,15 +1,15 @@
-interface MailTo {
+type MailTo = {
     name: string;
     email: string;
 }
 
-interface MessageMail {
+type MessageMail = {
     subject: string;
     body: string;
     attachment?: string[];
 }
 
-export interface MessageDTO {
+type MessageDTO = {
     to: MailTo;
     message: MessageMail;
 }
