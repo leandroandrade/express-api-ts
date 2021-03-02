@@ -1,13 +1,13 @@
 import faker from 'faker';
 import { CreateUserService } from '../../../../src/services/user';
-import { MockEmail, MockCreateUser } from './mocks';
+import { MockEmailSpy, MockCreateUserSpy } from './mocks';
 
 describe('user-services tests', () => {
     it('should create user', async (done) => {
-        const mockMail = new MockEmail();
+        const mockMail = new MockEmailSpy();
         const mailSpy = jest.spyOn(mockMail, 'sendEmail');
 
-        const mockCreateUser = new MockCreateUser();
+        const mockCreateUser = new MockCreateUserSpy();
         const mockCreateUserSpy = jest.spyOn(mockCreateUser, 'createUser');
 
         const service = new CreateUserService(mockMail, mockCreateUser);

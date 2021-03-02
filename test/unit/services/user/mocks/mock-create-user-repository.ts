@@ -1,7 +1,6 @@
-import { CreateUserRepository } from '../../../../../src/domain/data/users/create-user-repository';
+import { CreateUserRepository } from '../../../../../src/domain/dataproviders/users';
 import { User } from '../../../../../src/domain/models/user';
 
-export class MockCreateUser implements CreateUserRepository {
-    async createUser(user: User): Promise<void> {
-    }
+export class MockCreateUserSpy implements CreateUserRepository {
+    async createUser(user: User): Promise<void> {}
 }
