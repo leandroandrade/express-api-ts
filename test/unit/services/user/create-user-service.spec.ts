@@ -3,8 +3,6 @@ import CreateUserService from '../../../../src/services/user/create-user-service
 import MockEmail from './mock/mock-email';
 import MockCreateUser from './mock/mock-create-user-repository';
 
-jest.mock('../../../../src/dataproviders/repositories/users/users-repository');
-
 describe('user-services tests', () => {
     it('should create user', async (done) => {
         const mockMail = new MockEmail();
