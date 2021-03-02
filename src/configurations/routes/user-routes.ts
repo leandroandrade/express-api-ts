@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { UsersController } from '../../entrypoints/rest/users-controller';
+import UsersController from '../../entrypoints/rest/users-controller';
 
 export default (router: Router): void => {
     router.get('/users', UsersController.getUsers);
