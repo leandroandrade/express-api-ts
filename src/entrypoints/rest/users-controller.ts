@@ -4,13 +4,13 @@ import { UsersRepository } from '../../dataproviders/repositories/users/users-re
 import EmailService from '../../services/externals/mail/email-service';
 
 export const UsersController = {
-    async getUsers(req: Request, res: Response) {
+    async getUsers(req: Request, res: Response): Promise<Response> {
         const repository = new UsersRepository();
         const result = await repository.getUsers();
         return res.json({ results: result });
     },
 
-    async createUser(req: Request, res: Response) {
+    async createUser(req: Request, res: Response): Promise<Response> {
         const { name, email } = req.body;
 
         const mailer = new EmailService();
