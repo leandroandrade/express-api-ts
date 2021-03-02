@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { CreateUserService } from '../../services/user';
 import { UsersRepository } from '../../dataproviders/repositories/users/users-repository';
-import EmailService from '../../services/externals/mail/email-service';
+import { EmailService } from '../../services/externals/mail/email-service';
 
 const getUsers = async (req: Request, res: Response): Promise<Response> => {
     const repository = new UsersRepository();

@@ -14,6 +14,6 @@ export type MessageDTO = {
     message: MessageMail;
 };
 
-export default interface Mail {
+export interface Mail {
     sendEmail({ to, message }: MessageDTO): Promise<void>;
 }

@@ -1,5 +1,5 @@
 import faker from 'faker';
-import EmailService from '../../../../../src/services/externals/mail/email-service';
+import { EmailService } from '../../../../../src/services/externals/mail/email-service';
 
 describe('email-services tests', () => {
     it('should send email', async (done) => {
