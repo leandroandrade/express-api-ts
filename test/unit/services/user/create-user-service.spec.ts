@@ -1,5 +1,5 @@
 import faker from 'faker';
-import UserService from '../../../../src/services/user/user-service';
+import CreateUserService from '../../../../src/services/user/create-user-service';
 import MockEmail from './mock/mock-email';
 import MockCreateUser from './mock/mock-create-user';
 
@@ -13,7 +13,7 @@ describe('user-services tests', () => {
         const mockCreateUser = new MockCreateUser();
         const mockCreateUserSpy = jest.spyOn(mockCreateUser, 'createUser');
 
-        const service = new UserService(mockMail, mockCreateUser);
+        const service = new CreateUserService(mockMail, mockCreateUser);
 
         const mockData = {
             name: faker.name.findName(),
