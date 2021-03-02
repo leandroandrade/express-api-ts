@@ -1,21 +1,22 @@
 import faker from 'faker';
 import UserService from '../../../../src/services/user/user-service';
-import Mail, { MessageDTO } from '../../../../src/services/externals/mail';
+import MockEmail from './mock/mock-email';
+import MockCreateUser from './mock/mock-create-user';
+
+import { CreateUserRepository } from '../../../../src/dataproviders/repositories/users/create-user-repository';
+import { User } from '../../../../src/domain/models/user';
 
 jest.mock('../../../../src/dataproviders/repositories/users/users-repository');
-
-class MockEmail implements Mail {
-    async sendEmail({ to, message }: MessageDTO): Promise<void> {
-        console.log(to, message);
-    }
-}
 
 describe('user-services tests', () => {
     it('should create user', async (done) => {
         const mockMail = new MockEmail();
         const mailSpy = jest.spyOn(mockMail, 'sendEmail');
 
-        const service = new UserService(mockMail);
+        const mockCreateUser = new MockCreateUser();
+        const mockCreateUserSpy = jest.spyOn(mockCreateUser, 'createUser');
+
+        const service = new UserService(mockMail, mockCreateUser);
 
         const mockData = {
             name: faker.name.findName(),
@@ -31,6 +32,10 @@ describe('user-services tests', () => {
                 body: 'Congrats!!! Account created!',
             },
         });
+
+        expect(mockCreateUserSpy).toHaveBeenCalledTimes(1);
+        expect(mockCreateUserSpy).toHaveBeenCalledWith(mockData);
+
         done();
     });
 });

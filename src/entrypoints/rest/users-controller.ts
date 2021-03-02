@@ -14,7 +14,8 @@ export const UsersController = {
         const { name, email } = req.body;
 
         const mailer = new EmailService();
-        const serivce = new UserService(mailer);
+        const repository = new UsersRepository();
+        const serivce = new UserService(mailer, repository);
         await serivce.createUser({ name, email });
 
         return res.status(201).json({
