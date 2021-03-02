@@ -1,6 +1,6 @@
 import { User } from '../../../domain/models/user';
-import { CreateUserRepository } from './create-user-repository';
-import { FindUsersRepository } from './find-users-repository';
+import { CreateUserRepository } from '../../../domain/data/users/create-user-repository';
+import { FindUsersRepository } from '../../../domain/data/users/find-users-repository';
 
 const users: User[] = [{ name: 'John', email: 'john@test.com', id: 1 }];
 

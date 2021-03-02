@@ -1,4 +1,4 @@
-import { CreateUserRepository } from '../../../../../src/dataproviders/repositories/users/create-user-repository';
+import { CreateUserRepository } from '../../../../../src/domain/data/users/create-user-repository';
 import { User } from '../../../../../src/domain/models/user';
 
 export class MockCreateUser implements CreateUserRepository {
