@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import UserService from '../../services/user/user-service';
+import CreateUserService from '../../services/user/user-service';
 import { UsersRepository } from '../../dataproviders/repositories/users/users-repository';
 import EmailService from '../../services/externals/mail/email-service';
 
@@ -15,7 +15,7 @@ const createUser = async (req: Request, res: Response): Promise<Response> => {
     const mailer = new EmailService();
     const repository = new UsersRepository();
 
-    const serivce = new UserService(mailer, repository);
+    const serivce = new CreateUserService(mailer, repository);
     await serivce.createUser({ name, email });
 
     return res.status(201).json({
