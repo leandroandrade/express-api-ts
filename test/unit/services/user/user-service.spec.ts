@@ -3,9 +3,6 @@ import UserService from '../../../../src/services/user/user-service';
 import MockEmail from './mock/mock-email';
 import MockCreateUser from './mock/mock-create-user';
 
-import { CreateUserRepository } from '../../../../src/dataproviders/repositories/users/create-user-repository';
-import { User } from '../../../../src/domain/models/user';
-
 jest.mock('../../../../src/dataproviders/repositories/users/users-repository');
 
 describe('user-services tests', () => {
